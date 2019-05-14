@@ -2,18 +2,21 @@ git clone https://github.com/qitiandefangjian/qitianfangjian.git
 
 git config --global user.email "1084772020@qq.com"
 git config --global user.name "qitiandefangjian"
-cd qitianfangjian/jobplus11-2
+cd jobplus11-2/jobplus11-2-qitian
 
 sudo pip3 install flask flask-sqlalchemy mysqlclient flask-migrate flask-wtf flask-login  flask-sockets gunicorn redis faker
-
+sudo pip3 install -r requirements.txt
+sudo pip3 install faker
 sudo service mysql start
 mysql -uroot
 create database jobplus;
 
 export FLASK_DEBUG=1 FLASK_APP=manage.py
-flask init
+flask db init
 flask db migrate -m 'aaaaaaaa'
 flask db upgrade
+
+
 flask shell
 from jobplus.create_shuju import runstate
 runstate()

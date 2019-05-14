@@ -89,6 +89,6 @@ def runstate():
             pass
         else:
             print(job)
-            job.job_state = "下线"
+            job.job_state = "上线"
             db.session.add(job)
             db.session.commit()

@@ -82,6 +82,8 @@ def runjob():
 
 
 def runstate():
+    iter_users()
+    iter_Company()
     jobs=Job.query.all()
     
     for job in jobs:
